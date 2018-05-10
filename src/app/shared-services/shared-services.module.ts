@@ -6,7 +6,9 @@ import { HttpService } from './http.service';
   imports: [
     CommonModule
   ],
-  declarations: [],
+  declarations: [
+    
+  ],
   providers: [
     HttpService
   ]

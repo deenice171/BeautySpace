@@ -8,7 +8,7 @@ export class HttpService {
   constructor() { }
 
   get() {
-    console.log('from http service get function....')
+    console.log('from http service get function....');
   }
 
   post() {

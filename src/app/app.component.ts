@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     // setup
 }
 
-ngOnInit() {
+async ngOnInit() {
   console.log('angular initializing..');
 
 }
