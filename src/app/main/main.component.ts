@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpService } from '../shared-services/http.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 private myArr:Array<object> = [];
-  constructor() { }
+  constructor(
+    private http: HttpService
+  ) { }
 
   ngOnInit() {
+    let test = this.http.get();
     this.myArr = [
       {id: 1, name: "denise dedekian", profession: "cosmetologist", service: "hair", },
       {id: 2, name: "jack dedekian", profession: "makeup artist", service: "makeup", },

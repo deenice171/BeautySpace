@@ -7,6 +7,9 @@ import { MainFooterComponent } from './main-footer/main-footer.component';
 import { MainComponent } from './main/main.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutes } from './app.routing';
+import { AboutComponent } from './about/about.component';
+import { SharedServicesModule } from './shared-services/shared-services.module';   
+
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { AppRoutes } from './app.routing';
     MainHeaderComponent,
     MainFooterComponent,
     MainComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutes
+    AppRoutes,
+    SharedServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

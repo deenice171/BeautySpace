@@ -1,18 +1,25 @@
 import { RouterModule, Routes, PreloadAllModules} from '@angular/router'
 import { NotFoundComponent } from './not-found/not-found.component';
 import {MainComponent} from './main/main.component';
+import { AboutComponent } from './about/about.component';
 
-    const appRoutes: Routes = [
+const appRoutes: Routes = [
 
         { path: '',
     //    redirectTo: '/',
     //    pathMatch: 'full'
     component:MainComponent,
       },
+      { path: 'about',
+      //    redirectTo: '/',
+      //    pathMatch: 'full'
+      component:AboutComponent,
+      data: { title: 'About List'}
+        },
   {
          path: 'not-found',
        component: NotFoundComponent ,
-      data: { title: 'Heroes List' }
+      data: { title: 'Not Found List' }
        }, 
         {
          path: '**', 
