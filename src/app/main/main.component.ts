@@ -20,14 +20,15 @@ export class MainComponent implements OnInit {
     this.pStyle = {
       "color": "blue"
     };
-    let test: any = await this.http.get();
+   let test: any = await this.http.get('services');
+   console.log('test--->', test);
     this.myArr = [
-      {id: 1, name: "denise dedekian", profession: "cosmetologist", service: "hair", },
-      {id: 2, name: "jack dedekian", profession: "makeup artist", service: "makeup", },
-      {id: 3, name: "pauline dedekian", profession: "cosmetologist", service: "hair", },
-      {id: 4, name: "mel dedekian", profession: "makeup artist", service: "makeup", },
-      {id: 5, name: "christine dedekian", profession: "makeup artist", service: "makeup", },
-      {id: 6, name: "baby dedekian", profession: "makeup artist", service: "makeup", },
+      {id: 1, service: "Wedding hair", name: "denise dedekian", profession: "cosmetologist", cost: "90", },
+      {id: 2, service: "prom makeup", name: "jack dedekian", profession: "makeup artist", cost: "150", },
+      {id: 3, service: "hair stylist", name: "pauline dedekian", profession: "cosmetologist", cost: "100", },
+      {id: 4, service: "makeup", name: "mel dedekian", profession: "makeup artist", cost: "10", },
+      {id: 5, service: "makeup", name: "christine dedekian", profession: "makeup artist", cost: "20", },
+      {id: 6, service: "makeup", name: "baby dedekian", profession: "makeup artist", cost: "50", },
     ]
 
     console.log('myArray--->', this.myArr);
@@ -47,9 +48,10 @@ export class MainComponent implements OnInit {
   addRecord(record?: any) {
     let r = {
       id: record ? record.id : 'default',
+      service: record ? record.service : 'default',
       name: record ? record.name : 'default',
       profession: record ? record.profession : 'default',
-      service: record ? record.service : 'default'
+      cost: record ? record.cost : 'default'
     }
     this.myArr.unshift(r);
   }

@@ -1,8 +1,9 @@
 Showing RED? <input [(ngModel)]="shouldShowRed"><br>
 ID: <input [(ngModel)]="newRecord.id"><br>
+Service: <input [(ngModel)]="newRecord.service"><br>
 Name: <input [(ngModel)]="newRecord.name"><br>
 Profession: <input [(ngModel)]="newRecord.profession"><br>
-Service: <input [(ngModel)]="newRecord.service"><br>
+Cost: <input [(ngModel)]="newRecord.cost"><br>
 <button (click)="addRecord(newRecord)" mat-raised-button color="accent">Add Record</button>
 <div *ngFor="let a of myArr; let i = index">
   <h1 [ngClass]="{'red':shouldShowRed}">ID: {{a.id}} Name: {{a.name}}</h1>
