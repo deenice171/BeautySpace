@@ -20,17 +20,14 @@ export class MainComponent implements OnInit {
     this.pStyle = {
       "color": "blue"
     };
-   let test: any = await this.http.get('services');
-   console.log('test--->', test);
-    this.myArr = [
-      {id: 1, service: "Wedding hair", name: "denise dedekian", profession: "cosmetologist", cost: "90", },
-      {id: 2, service: "prom makeup", name: "jack dedekian", profession: "makeup artist", cost: "150", },
-      {id: 3, service: "hair stylist", name: "pauline dedekian", profession: "cosmetologist", cost: "100", },
-      {id: 4, service: "makeup", name: "mel dedekian", profession: "makeup artist", cost: "10", },
-      {id: 5, service: "makeup", name: "christine dedekian", profession: "makeup artist", cost: "20", },
-      {id: 6, service: "makeup", name: "baby dedekian", profession: "makeup artist", cost: "50", },
-    ]
+    // let test: any = await this.http.get('services');
+    // console.log('test--->', test);
+    await this.getServices();
+  }
 
+  async getServices() {
+    this.myArr = await this.http.get('services');
+    this.myArr = await this.http.get('services');
     console.log('myArray--->', this.myArr);
   }
 
@@ -40,21 +37,47 @@ export class MainComponent implements OnInit {
     return this.shouldShowRed;
   }
 
-  remove(index: any) {
-    console.log('index of this item is:::', index);
-    this.myArr.splice(index, 1);
-  }
-
-  addRecord(record?: any) {
-    let r = {
-      id: record ? record.id : 'default',
-      service: record ? record.service : 'default',
-      name: record ? record.name : 'default',
-      profession: record ? record.profession : 'default',
-      cost: record ? record.cost : 'default'
+  async remove(id: any) {
+       // this.myArr.splice(index, 1);
+    console.log('id from remove: ID', id);
+    let resp: any = await this.http.remove('services', id);
+    console.log('resp from remove...resp"  ', resp);
+    if (resp) {
+      console.log('from if statement...');
+      this.getServices();
     }
-    this.myArr.unshift(r);
+  }
+
+  update(record) {
+    this.newRecord = record;
   }
 
 
+
+  async addRecord(record?: any) {
+    let payload: any = {}, resp;
+    payload = {
+      Service: record ? record.service : 'default',
+      Name: record ? record.name : 'default',
+      Profession: record ? record.profession : 'default',
+      Cost: record ? record.cost : 'default'
+    }
+    if (record._id) {
+
+      //do update
+      resp = await this.http.update('services/id/${record._id}', payload);
+    } else {
+      //do create
+
+    
+    console.log('payload from addRecord', payload);
+    //this.myArr.unshift(r);
+    resp = await this.http.post('services', payload);
+    console.log('resp from after posting the service', resp);
+  }
+
+  if (resp) {
+    await this.getServices();
+  }
+}
 }

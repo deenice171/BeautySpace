@@ -4,30 +4,50 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class HttpService {
+
   private apiUrl: string = '';
+
   constructor(private http: Http) {
     this.apiUrl = environment.apiUrl;
-  
-}
+
+  }
 
   get(path:string) {
-    console.log('from http service get function....endpoint: ',this.apiUrl + path);
+    console.log('from http service get function....endpoint: ', this.apiUrl + path);
     return this.http.get(this.apiUrl + path)
-    .toPromise()
-    .then((resp:any) => {
-      //console.log('response from server...', resp);
-      return resp.json();
-    });
+      .toPromise()
+      .then((resp:any) => {
+        //console.log('response from server...', resp);
+        return resp.json();
+      });
   }
 
-  post(){
+  post(path: string, payload: object) {
+
+    return this.http.post(this.apiUrl + path, payload).toPromise()
+      .then((resp:any) => {
+        console.log('resp from post....', resp);
+        return resp.json();
+      })
 
   }
 
-  put() {
+  update(path: string, payload: any) {
+    return this.http.put(this.apiUrl + path, payload)
+      .toPromise()
+      .then((resp: any) => {
+        console.log('from http service update resp: ', resp);
+        return resp.json();
+      });
 
   }
-  remove() {
-    
+
+  remove(path:string, id: string) {
+    return this.http.delete(this.apiUrl + path + '/id/' + id)
+      .toPromise()
+      .then((resp:any) => {
+        console.log('resp from remove...', resp);
+        return resp.json();
+      });
   }
 }
