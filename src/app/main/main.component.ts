@@ -13,7 +13,8 @@ export class MainComponent implements OnInit {
   private newRecord: object = {};
 
   constructor(
-    private http: HttpService
+    private http: HttpService,
+    
   ) { }
 
   async ngOnInit() {
@@ -39,7 +40,7 @@ export class MainComponent implements OnInit {
 
   async remove(id: any) {
        // this.myArr.splice(index, 1);
-    console.log('id from remove: ID', id);
+    console.log('id from remove: id', id);
     let resp: any = await this.http.remove('services', id);
     console.log('resp from remove...resp"  ', resp);
     if (resp) {
@@ -57,10 +58,10 @@ export class MainComponent implements OnInit {
   async addRecord(record?: any) {
     let payload: any = {}, resp;
     payload = {
-      Service: record ? record.service : 'default',
-      Name: record ? record.name : 'default',
-      Profession: record ? record.profession : 'default',
-      Cost: record ? record.cost : 'default'
+      service: record ? record.service : 'default',
+      name: record ? record.name : 'default',
+      profession: record ? record.profession : 'default',
+      cost: record ? record.cost : 'default'
     }
     if (record._id) {
 
