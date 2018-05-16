@@ -19,7 +19,7 @@ export class HttpService {
       .then((resp:any) => {
         //console.log('response from server...', resp);
         return resp.json();
-      })
+      });
   }
 
   post(path: string, payload: object) {
@@ -38,7 +38,7 @@ export class HttpService {
       .then((resp: any) => {
         console.log('from http service update resp: ', resp);
         return resp.json();
-      })
+      });
 
   }
 
@@ -48,6 +48,6 @@ export class HttpService {
       .then((resp:any) => {
         console.log('resp from remove...', resp);
         return resp.json();
-      })
+      });
   }
 }
