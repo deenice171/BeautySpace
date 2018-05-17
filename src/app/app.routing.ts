@@ -3,6 +3,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {MainComponent} from './main/main.component';
 import { AboutComponent } from './about/about.component';
 import { CreateServiceComponent } from './create-service/create-service.component';
+import { GalleryComponent } from './gallery/gallery.component';
+
 
 
 
@@ -27,6 +29,13 @@ const appRoutes: Routes = [
       component:AboutComponent,
       data: { title: 'About List'}
         },
+        { path: 'gallery',
+        //    redirectTo: '/',
+        //    pathMatch: 'full'
+        component:GalleryComponent,
+        data: { title: 'Gallery'}
+          },
+
   {
          path: 'not-found',
        component: NotFoundComponent ,

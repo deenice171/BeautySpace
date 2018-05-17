@@ -3,11 +3,15 @@
 }
 .card-container {
     width: 100%;
+    color: antiquewhite;
 }
 .service-card {
     width: 18%;
     float:left;
     margin-right:1%;
+    margin-bottom: 2%;
+    color: black;
+    background-color: rgb(248, 226, 237);
 }
 .service-card:last-child {
     margin-right:0%;
@@ -17,4 +21,10 @@
     float: left !important;
     max-width: 50px !important;
     display: block;
+}
+.mat-raised-button {
+    background-color: rgb(179, 0, 89);
+    color:white;
+    margin-bottom: 2%;
+
 }

@@ -14,6 +14,8 @@ import {AngularMaterialModule} from './angular-material/angular-material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { CreateServiceComponent } from './create-service/create-service.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -24,7 +26,10 @@ import { CreateServiceComponent } from './create-service/create-service.componen
     MainComponent,
     NotFoundComponent,
     AboutComponent,
-    CreateServiceComponent
+    CreateServiceComponent,
+    GalleryComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,8 @@ import { CreateServiceComponent } from './create-service/create-service.componen
     FormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    HttpModule
+    HttpModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

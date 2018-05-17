@@ -1,6 +1,9 @@
 
 
-<button (click)="goToCreateService()" mat-raised-button color="accent">Add A New Service</button>
+<button (click)="goToCreateService()" mat-raised-button color="">Add A New Service</button>
+<a mat-raised-button routerLink="../../about" mat-raised-button color= "accent">About Us</a>
+<a mat-raised-button routerLink="../../gallery" mat-raised-button color= "accent">Gallery</a>
+
 
 <div class="card-container">
   <mat-card class="service-card" *ngFor="let service of myArr">
@@ -9,7 +12,7 @@
       <mat-card-title>Service: {{service.service}}</mat-card-title>
       <mat-card-subtitle>Name: {{service.name}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="https://www.zibaii.com/image/thirdphoto.jpg" alt="Cosmetology Photo">
     <mat-card-content>
       <p>Profession: {{service.profession}}</p>
       <p>Cost: {{service.cost}}</p>

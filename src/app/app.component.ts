@@ -19,7 +19,7 @@ async ngOnInit() {
   console.log('angular initializing..');
 
 }
-
+ 
 
 private get Title() {
    return this._title;

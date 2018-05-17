@@ -1,7 +1,6 @@
-.create-service-container {
-    margin-top:50px;
-    width:50%;
-    margin: 0 auto;
+.image {
+    height: 300px;
+    margin: 5px;
 }
 .mat-raised-button {
     background-color: rgb(179, 0, 89);

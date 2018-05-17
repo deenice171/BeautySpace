@@ -26,7 +26,8 @@ export class CreateServiceComponent implements OnInit {
       service: record ? record.service : 'default',
       name: record ? record.name : 'default',
       profession: record ? record.profession : 'default',
-      cost: record ? record.cost : 'default'
+      cost: record ? record.cost : 'default',
+     
     }
     if (record._id) {
 
