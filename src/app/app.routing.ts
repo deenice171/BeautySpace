@@ -2,6 +2,9 @@ import { RouterModule, Routes, PreloadAllModules} from '@angular/router'
 import { NotFoundComponent } from './not-found/not-found.component';
 import {MainComponent} from './main/main.component';
 import { AboutComponent } from './about/about.component';
+import { CreateServiceComponent } from './create-service/create-service.component';
+
+
 
 const appRoutes: Routes = [
 
@@ -10,6 +13,14 @@ const appRoutes: Routes = [
     //    pathMatch: 'full'
     component:MainComponent,
       },
+      
+      { path: 'create-service',
+      //    redirectTo: '/',
+      //    pathMatch: 'full'
+      component:CreateServiceComponent,
+      data: { title: 'Create A New Service'}
+        },
+
       { path: 'about',
       //    redirectTo: '/',
       //    pathMatch: 'full'

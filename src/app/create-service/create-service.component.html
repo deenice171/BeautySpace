@@ -1,0 +1,37 @@
+<p>
+  Please enter your information to advertise your services!
+</p>
+
+<p>
+  Whether it's hair, makeup, or any beauty service, The Beauty Space allows you to advertise your expertise.
+</p>
+<p>
+  Just enter the service you're offering, your name, your licensed profession, and the cost! </p>
+<div class="create-service-container">
+  <mat-card>
+    <mat-card-content>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Service" value="" [(ngModel)]="newRecord.service"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Name" value="" [(ngModel)]="newRecord.name"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Profession" value="" [(ngModel)]="newRecord.profession"></textarea>
+        </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Cost" value="" [(ngModel)]="newRecord.cost"></textarea>
+      </mat-form-field>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+<button (click)="addRecord(newRecord)" mat-raised-button color="accent">{{newRecord._id ? 'Update Record' : 'Add Record'}}</button>

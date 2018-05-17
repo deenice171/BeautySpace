@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AngularMaterialModule} from './angular-material/angular-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+import { CreateServiceComponent } from './create-service/create-service.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpModule } from '@angular/http';
     MainFooterComponent,
     MainComponent,
     NotFoundComponent,
-    AboutComponent
+    AboutComponent,
+    CreateServiceComponent
   ],
   imports: [
     BrowserModule,
