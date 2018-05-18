@@ -16,6 +16,8 @@ import { HttpModule } from '@angular/http';
 import { CreateServiceComponent } from './create-service/create-service.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { AppointmentComponent } from './appointment/appointment.component';
+
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AboutComponent,
     CreateServiceComponent,
     GalleryComponent,
+    AppointmentComponent,
+  
     
     
   ],

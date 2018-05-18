@@ -1,8 +1,10 @@
-p {
-    background-color: gainsboro;
-}
+
 .mat-raised-button {
     background-color: rgb(179, 0, 89);
     color:white;
     margin-bottom: 2%;
+}
+.about {
+    font-size: .8cm;
+    text-align: center;
 }
